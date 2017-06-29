@@ -8,4 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'Source\\' => array($baseDir . '/sources'),
     'Renderrer\\' => array($baseDir . '/renderrer'),
+    'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
+    'PhpOffice\\PhpSpreadsheet\\' => array($vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet'),
+    'FontLib\\' => array($vendorDir . '/phenx/php-font-lib/src/FontLib'),
+    'Dompdf\\' => array($vendorDir . '/dompdf/dompdf/src'),
 );

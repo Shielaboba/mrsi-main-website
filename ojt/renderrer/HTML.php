@@ -1,24 +1,27 @@
-<?php
+<?php 
 namespace Renderrer;
 
-class HTML {
+class HTML implements TableInterface{
 
     protected $meals;
     protected $orders;
-
+    
+    public function render()
+    {
+        echo $this->getHTML();
+    }
     public function setMeals(array $meals)
     {
         $this->meals = $meals;
-    } 
-
+    }
+    
     public function setOrders(array $orders)
     {
-        $this->orders = $orders;
+        $this->orders=$orders;
     }
 
-    public function OrderTable()
+    public function getHTML()
     {
-        
         $header = '<th>Orders</th>';
         $new_meals = [];
         $total = [];
@@ -58,7 +61,7 @@ class HTML {
             $sumrow .= "<td style=\"background-color:{$background};\">{$total_price}</td>";
         }
 
-        $table = "
+    $table = "<body style=\"background-color:rgb(235,235,235);\">  <div class=\"container\" style=\"border:1px solid black;background-color:rgb(250,250,250);margin-top:15px; box-shadow:1px 1px 10px 1px black;animation-name: tablef;animation-duration: 4s;\">
         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">
         <table class=\"table table-striped\">
 
@@ -74,15 +77,12 @@ class HTML {
                     {$sumrow}
                 </tr>
             </tbody>
-        </table>"; 
+        </table>
+        </div></body>"; 
+          return $table;
+    }   
 
-        echo $table;
-
-
-    }
-
-    protected function getMaxMin (array $totals)
-    {
+    protected function getMaxMin(array $totals){
         $max_min = ['max' => 0, 'min' => 0];
         $i = 0;
         foreach($totals as $total){
@@ -104,6 +104,8 @@ class HTML {
         }
 
         return $max_min;
+           
+
     }
 
 }

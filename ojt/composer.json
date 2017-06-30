@@ -2,7 +2,8 @@
     "autoload":{
         "psr-4" :{
             "Source\\":"sources/",
-            "Renderrer\\":"renderrer/"
+            "Renderrer\\":"renderrer/",
+            "Controller\\":"controllers/"
         }
     },
     "require": {

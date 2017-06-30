@@ -4,15 +4,22 @@ use Source\SourceOrder;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-class CSV implements TableInterface{
+class CSV implements TableInterface {
+
+    protected $source;
+
+    public function __construct(SourceOrder $source)
+    {
+        $this->source = $source;
+    }    
 
     public function render()
     {
-        $source = new SourceOrder();
         $spreadsheet = new Spreadsheet();
+
         $sheet = $spreadsheet->getActiveSheet();
-        $meals = $source->getMeals();
-        $orders = $source->getOrders();
+        $meals = $this->source->getMeals();
+        $orders = $this->source->getOrders();
         $total = [];
         $new_meals = [];
         $row_list = ['B','C','D','E','F','G','H'];
@@ -56,8 +63,11 @@ class CSV implements TableInterface{
             $col_num++;
         }
 
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="file.xlsx"');
+        header('Cache-Control: max-age=0');
         $writer = new Xlsx($spreadsheet);
-        $writer->save('world.xlsx');
+        $writer->save('php://output');
     }
 
     protected function getMaxMin(array $totals){

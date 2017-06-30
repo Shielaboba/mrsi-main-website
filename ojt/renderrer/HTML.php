@@ -1,37 +1,34 @@
 <?php 
 namespace Renderrer;
+use Source\SourceOrder;
 
 class HTML implements TableInterface{
 
-    protected $meals;
-    protected $orders;
-    
+    protected $source;
+
+    public function __construct(SourceOrder $source)
+    {
+        $this->source = $source;
+    }    
     public function render()
     {
         echo $this->getHTML();
     }
-    public function setMeals(array $meals)
-    {
-        $this->meals = $meals;
-    }
-    
-    public function setOrders(array $orders)
-    {
-        $this->orders=$orders;
-    }
 
     public function getHTML()
     {
+        $meals = $this->source->getMeals();
+        $orders = $this->source->getOrders();
         $header = '<th>Orders</th>';
         $new_meals = [];
         $total = [];
-        foreach ($this->meals as $meal) {
+        foreach ($meals as $meal) {
             $header .= "<th>{$meal['meal_name']}</th>";   
             $new_meals[$meal['id']] = $meal; 
             $total[$meal['id']] = 0;
         }
         $rows = '';
-        foreach ($this->orders as $index => $order) {
+        foreach ($orders as $index => $order) {
             $cols = '';
             foreach ($new_meals as $meal_id => $meal) {
                 $qty = isset($order[$meal_id]) ? $order[$meal_id] : 0;

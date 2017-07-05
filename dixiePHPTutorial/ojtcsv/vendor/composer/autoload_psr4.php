@@ -12,5 +12,9 @@ return array(
     'PhpOffice\\PhpSpreadsheet\\' => array($vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet'),
     'FontLib\\' => array($vendorDir . '/phenx/php-font-lib/src/FontLib'),
     'Dompdf\\' => array($vendorDir . '/dompdf/dompdf/src'),
+<<<<<<< HEAD:dixiePHPTutorial/ojtcsv/vendor/composer/autoload_psr4.php
     'Controllers\\' => array($baseDir . '/controllers'),
+=======
+    'Controller\\' => array($baseDir . '/controllers'),
+>>>>>>> dc6c185d7f6a62b670221688dbef082be1b9aac8:ojt/vendor/composer/autoload_psr4.php
 );

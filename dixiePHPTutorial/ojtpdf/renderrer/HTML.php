@@ -1,16 +1,29 @@
 <?php
 namespace Renderrer;
+use Source\SourceOrder;
 
+<<<<<<< HEAD:dixiePHPTutorial/ojtpdf/renderrer/HTML.php
 class HTML implements TableInterface {
    
     protected $meals;
     protected $orders;
 
+=======
+class HTML implements TableInterface{
+
+    protected $source;
+
+    public function __construct(SourceOrder $source)
+    {
+        $this->source = $source;
+    }    
+>>>>>>> dc6c185d7f6a62b670221688dbef082be1b9aac8:ojt/renderrer/HTML.php
     public function render()
     {
         echo $this->getHTML();
     }
 
+<<<<<<< HEAD:dixiePHPTutorial/ojtpdf/renderrer/HTML.php
     public function setMeals(array $meals)
     {
         $this->meals = $meals;
@@ -23,16 +36,22 @@ class HTML implements TableInterface {
  
     public function getHTML(){
         
+=======
+    public function getHTML()
+    {
+        $meals = $this->source->getMeals();
+        $orders = $this->source->getOrders();
+>>>>>>> dc6c185d7f6a62b670221688dbef082be1b9aac8:ojt/renderrer/HTML.php
         $header = '<th>Orders</th>';
         $new_meals = [];
         $total = [];
-        foreach ($this->meals as $meal) {
+        foreach ($meals as $meal) {
             $header .= "<th>{$meal['meal_name']}</th>";   
             $new_meals[$meal['id']] = $meal; 
             $total[$meal['id']] = 0;
         }
         $rows = '';
-        foreach ($this->orders as $index => $order) {
+        foreach ($orders as $index => $order) {
             $cols = '';
             foreach ($new_meals as $meal_id => $meal) {
                 $qty = isset($order[$meal_id]) ? $order[$meal_id] : 0;

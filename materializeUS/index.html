@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+        <link rel="stylesheet" href="css.css"/>
+        <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+         <nav class="nav-extended">
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo center">Forum</a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#login"><i class="fa fa-sign-in" aria-hidden="true"> Login</i></a></li>
+                <li><a href="#signUp"><i class="fa fa-user-plus" aria-hidden="true"> Sign Up</i></a></li>
+                <li><a href="#about"><i class="fa fa-question-circle-o" aria-hidden="true"> About</i></a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li><a href="#login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                <li><a href="#signUp"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
+                <li><a href="#about"><i class="fa fa-question-circle-o" aria-hidden="true"></i> About</a></li>
+              </ul>
+            </div>
+            <div class="nav-content">
+              <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="#test1"><i class="fa fa-home" aria-hidden="true"> Home</i></a></li>
+                <li class="tab"><a href="#test2"><i class="fa fa-book" aria-hidden="true"> Discussion</i></a></li>
+                <li class="tab"><a href="#test3"><i class="fa fa-user-circle-o" aria-hidden="true"> Members</i></a></li>
+              </ul>
+            </div>
+        </nav>
+            <div class="container">
+            <div class="row">
+              <div id="test1" class="col s12">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Latest</div>
+                      <div class="collapsible-body"><span>R-jay bati nawng!</span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            </div> 
+
+
+
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>       
+        <script> $(".button-collapse").sideNav();</script>
+    </body>
+  </html>
+        
+

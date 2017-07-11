@@ -1,0 +1,9 @@
+body{
+	background-image: url("../alien.jpg");
+	background-size: cover;
+	
+}
+.big{
+	color: rgba(241, 121, 252, .7);
+	text-align: center;
+}

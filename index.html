@@ -1,28 +1,41 @@
  <!DOCTYPE html>
   <html>
-    <head>
+  <head>
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-<<<<<<< HEAD
-<link type="text/css" rel="stylesheet" href="css/index.css"> 
-=======
+      <link type="text/css" rel="stylesheet" href="css/index.css"> 
       <link type="text/css" rel="stylesheet" href="css/team.css"  media="screen,projection"/>
-
->>>>>>> 01622e825d07c59cf5dc090e73b87ab8b15c5ff0
-
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+      <link rel="icon" type="image/png" href="./team_js.png">
+      <title> TEAM MSR </title>
+  </head>
 
     <body>
      	<p>What does the fox says!?</p>
 	 <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-	<h1 class="big"></h1>	
-	<a id="button1" class="waves-effect waves-light btn" type="button" onclick='document.getElementById("button1").innerHTML = "Hello javaScript! :D"'>CLICK</a>
+	<h1 class="big"></h1> 	
+	<a id="button1" class="waves-effect waves-light btn" type="button" onclick="document.getElementById('button1').innerHTML = 'Hello javaScript! :D'">CLICK</a>
+        <style type="text/css">
+            .show{display:block;}
+            .hide{display:none;}
+        </style>
+        <script type="text/javascript">
+            function showImg(){
+                var img = document.getElementById('picture1');
+                img.className = 'show';
+            }
+        </script>
+    
+        <center>
+            <img id="picture1" src="team_js.png" class="hide">
+            <input class="waves-effect waves-light btn"type="button" onclick='showImg()' value="CLICK">
+        </center>       
+
         <footer class="page-footer">
           <div class="container">
             <div class="row">

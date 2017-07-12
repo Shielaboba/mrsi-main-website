@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD:dixiePHPTutorial/ojtcsv/vendor/composer/autoload_static.php
 class ComposerStaticInitba0654d4a335bf4272cdcea639dc2bfb
-=======
-class ComposerStaticInite524cb83b272c1381817f2380307d5f2
->>>>>>> dc6c185d7f6a62b670221688dbef082be1b9aac8:ojt/vendor/composer/autoload_static.php
 {
     public static $prefixLengthsPsr4 = array (
         'S' => 
@@ -34,11 +30,7 @@ class ComposerStaticInite524cb83b272c1381817f2380307d5f2
         ),
         'C' => 
         array (
-<<<<<<< HEAD:dixiePHPTutorial/ojtcsv/vendor/composer/autoload_static.php
             'Controllers\\' => 12,
-=======
-            'Controller\\' => 11,
->>>>>>> dc6c185d7f6a62b670221688dbef082be1b9aac8:ojt/vendor/composer/autoload_static.php
         ),
     );
 
@@ -67,11 +59,7 @@ class ComposerStaticInite524cb83b272c1381817f2380307d5f2
         array (
             0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
         ),
-<<<<<<< HEAD:dixiePHPTutorial/ojtcsv/vendor/composer/autoload_static.php
         'Controllers\\' => 
-=======
-        'Controller\\' => 
->>>>>>> dc6c185d7f6a62b670221688dbef082be1b9aac8:ojt/vendor/composer/autoload_static.php
         array (
             0 => __DIR__ . '/../..' . '/controllers',
         ),
@@ -103,17 +91,10 @@ class ComposerStaticInite524cb83b272c1381817f2380307d5f2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD:dixiePHPTutorial/ojtcsv/vendor/composer/autoload_static.php
             $loader->prefixLengthsPsr4 = ComposerStaticInitba0654d4a335bf4272cdcea639dc2bfb::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitba0654d4a335bf4272cdcea639dc2bfb::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitba0654d4a335bf4272cdcea639dc2bfb::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitba0654d4a335bf4272cdcea639dc2bfb::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInite524cb83b272c1381817f2380307d5f2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite524cb83b272c1381817f2380307d5f2::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInite524cb83b272c1381817f2380307d5f2::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInite524cb83b272c1381817f2380307d5f2::$classMap;
->>>>>>> dc6c185d7f6a62b670221688dbef082be1b9aac8:ojt/vendor/composer/autoload_static.php
 
         }, null, ClassLoader::class);
     }

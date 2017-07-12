@@ -4,19 +4,8 @@ use Source\SourceOrder;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-<<<<<<< HEAD:dixiePHPTutorial/ojtcsv/renderrer/CSV.php
 
 class CSV implements TableInterface{
-=======
-class CSV implements TableInterface {
-
-    protected $source;
-
-    public function __construct(SourceOrder $source)
-    {
-        $this->source = $source;
-    }    
->>>>>>> dc6c185d7f6a62b670221688dbef082be1b9aac8:ojt/renderrer/CSV.php
 
     protected $meals;
     protected $orders;    
@@ -30,13 +19,7 @@ class CSV implements TableInterface {
     public function render()
     {
         $spreadsheet = new Spreadsheet();
-
         $sheet = $spreadsheet->getActiveSheet();
-<<<<<<< HEAD:dixiePHPTutorial/ojtcsv/renderrer/CSV.php
-=======
-        $meals = $this->source->getMeals();
-        $orders = $this->source->getOrders();
->>>>>>> dc6c185d7f6a62b670221688dbef082be1b9aac8:ojt/renderrer/CSV.php
         $total = [];
         $new_meals = [];
         $row_list = ['B','C','D','E','F','G','H'];
@@ -84,9 +67,6 @@ class CSV implements TableInterface {
         header('Content-Disposition: attachment;filename="file.xlsx"');
         header('Cache-Control: max-age=0');
 
-        header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment;filename="file.xlsx"');
-        header('Cache-Control: max-age=0');
         $writer = new Xlsx($spreadsheet);
         $writer->save('php://output');
     }

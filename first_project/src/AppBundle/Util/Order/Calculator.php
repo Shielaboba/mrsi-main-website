@@ -11,15 +11,11 @@ class Calculator
         $list   = $orders->getOrders();
         $meals  = $orders->getMealsById();
         $totals = [];
-
         foreach ($list as $index => $order) {
-
             foreach ($order as $meal_id => $meal_count) {
-
                 if (! isset($totals[$meal_id])) {
                     $totals[$meal_id] = 0; 
                 }
-
                 $price = $meal_count * $meals[$meal_id]['price'];
                 $totals[$meal_id] += $price; 
             }

@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Data\Orders;
 use AppBundle\Util\Order\Calculator;
+use AppBundle\Util\CSV\processCSV;
 use AppBundle\Util\PDF\PDFRenderer;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -52,15 +53,18 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/generateCSV", name="generateCSV")
+     * @Route("/orders/csv", name="generateOrderCSV")
      */
    public function generateCSVAction(Request $request)
     {
+        $order = new Orders();
+        $generate = new processCSV($order);
+        $generate->render(); 
+        
         
         // replace this example code with whatever you need
-        return $this->render('AppBundle::default/orderTable.html.twig'); 
+        return $this->render('AppBundle::default/order_csv.html.twig'); 
     }
     
-     */
 
 }
